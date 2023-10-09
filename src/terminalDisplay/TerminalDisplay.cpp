@@ -248,7 +248,7 @@ TerminalDisplay::TerminalDisplay(QWidget *parent)
     connect(_blinkCursorTimer, &QTimer::timeout, this, &Konsole::TerminalDisplay::blinkCursorEvent);
 
     // hide mouse cursor on keystroke or idle
-    KCursor::setAutoHideCursor(this, true);
+    KCursor::setAutoHideCursor(this, false);
     setMouseTracking(true);
 
     setUsesMouseTracking(false);
