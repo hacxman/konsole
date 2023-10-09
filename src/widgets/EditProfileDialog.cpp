@@ -282,7 +282,7 @@ void EditProfileDialog::setMessageGeneralPage(const QString &msg)
     _generalUi->generalPageMessageWidget->setText(msg);
     _generalUi->generalPageMessageWidget->setMessageType(KMessageWidget::Error);
     setCurrentPage(_generalPageItem);
-    _generalUi->generalPageMessageWidget->animatedShow();
+    _generalUi->generalPageMessageWidget->show();
 }
 
 bool EditProfileDialog::isProfileNameValid()
@@ -1346,8 +1346,8 @@ void EditProfileDialog::gotNewColorSchemes(const KNSCore::Entry::List &changedEn
             }
             if (failures == entry.installedFiles().size()) {
                 _appearanceUi->colorSchemeMessageWidget->setText(xi18nc("@info", "Scheme <resource>%1</resource> failed to load.", entry.name()));
-                _appearanceUi->colorSchemeMessageWidget->animatedShow();
-                QTimer::singleShot(8000, _appearanceUi->colorSchemeMessageWidget, &KMessageWidget::animatedHide);
+                _appearanceUi->colorSchemeMessageWidget->show();
+                QTimer::singleShot(8000, _appearanceUi->colorSchemeMessageWidget, &KMessageWidget::hide);
             }
             break;
         case KNSCore::Entry::Deleted:

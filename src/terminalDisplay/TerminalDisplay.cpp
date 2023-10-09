@@ -2581,7 +2581,7 @@ void TerminalDisplay::outputSuspended(bool suspended)
         _outputSuspendedMessageWidget->setMessageType(KMessageWidget::Warning);
     }
 
-    suspended ? _outputSuspendedMessageWidget->animatedShow() : _outputSuspendedMessageWidget->animatedHide();
+    suspended ? _outputSuspendedMessageWidget->show() : _outputSuspendedMessageWidget->hide();
 }
 
 KMessageWidget *TerminalDisplay::createMessageWidget(const QString &text)
@@ -2630,7 +2630,7 @@ void TerminalDisplay::updateReadOnlyState(bool readonly)
     }
 
     if (_readOnlyMessageWidget != nullptr) {
-        readonly ? _readOnlyMessageWidget->animatedShow() : _readOnlyMessageWidget->animatedHide();
+        readonly ? _readOnlyMessageWidget->show() : _readOnlyMessageWidget->hide();
     }
 
     _readOnly = readonly;
